@@ -1,0 +1,577 @@
+/* ==========================================================================
+   1. VARIABLES & GLOBAL STYLES (Tema Pastel Gen Z)
+   ========================================================================== */
+:root {
+    --bg-color: #fff5f5;        /* Pink super soft */
+    --second-bg-color: #f7e9fa; /* Lilac/Ungu soft */
+    --text-color: #4a3b42;      /* Cokelat gelap lembut (bukan hitam kaku) */
+    --main-color: #ff9aa2;      /* Pink cerah pastel */
+    --accent-color: #ffdac1;    /* Peach lembut */
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Quicksand', sans-serif; /* Font ramah & bulat */
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 4rem;
+}
+
+/* ==========================================================================
+   2. NAVIGATION BAR
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(255, 245, 245, 0.85);
+    backdrop-filter: blur(10px); /* Efek kaca transparan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 2px dashed var(--main-color);
+}
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-left: 3.5rem;
+    transition: .3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--main-color);
+}
+
+/* Garis bawah lucu saat hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--main-color);
+    bottom: -5px;
+    left: 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.hamburger {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   3. HOME SECTION & SOCIAL MEDIA
+   ========================================================================== */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.home-content h3 {
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.home-content h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 5.5rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 550px;
+}
+
+.highlight {
+    background: linear-gradient(120deg, #ff9aa2 0%, #ffdac1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.home-img img {
+    width: 32vw;
+    border-radius: 50% 40% 45% 50% / 40% 45% 50% 55%; /* Bentuk lingkaran organik yang lucu */
+    border: 5px solid var(--main-color);
+    box-shadow: 0 10px 20px rgba(255, 154, 162, 0.3);
+    animation: bubbleFloat 6s ease-in-out infinite;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+/* Tombol Sosial Media (Instagram & LinkedIn Gede) */
+.social-media {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;         /* Ukuran lingkaran tombol */
+    height: 6rem;        /* Ukuran lingkaran tombol */
+    background: transparent;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 3rem;     /* Ukuran logo di dalamnya (Sudah diperbesar!) */
+    color: var(--main-color);
+    transition: .3s ease;
+}
+
+/* Efek gemas pas icon medsos disentuh kursor */
+.social-media a:hover {
+    background: var(--main-color);
+    color: white;
+    transform: translateY(-5px) rotate(15deg);
+    box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+    border-radius: 5rem;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4);
+    transition: .3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 154, 162, 0.6);
+}
+
+/* GLOBAL HEADINGS */
+.heading {
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.sub-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+    color: #7d6b73;
+}
+
+/* ==========================================================================
+   4. ABOUT SECTION
+   ========================================================================== */
+.about {
+    background: var(--second-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+.about-img img {
+    width: 25vw;
+    border-radius: 3rem;
+    border: 4px solid white;
+    transform: rotate(-3deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+.fun-facts {
+    margin-top: 2rem;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px dashed var(--main-color);
+}
+
+.fun-facts h4 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.fun-facts ul {
+    list-style: none;
+}
+
+.fun-facts li {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* ==========================================================================
+   5. SKILLS SECTION
+   ========================================================================== */
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    flex: 1 1 18rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 154, 162, 0.2);
+}
+
+.skill-card i {
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.8rem;
+}
+
+/* ==========================================================================
+   6. CUTE GALLERY / MOODBOARD SECTION (BANYAK FOTO)
+   ========================================================================== */
+.gallery {
+    background: #fffbfb;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+/* Efek Foto Polaroid Klasik */
+.item-polaroid {
+    background: white;
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.item-polaroid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.item-polaroid p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    color: #63525a;
+}
+
+/* Kemiringan acak ala mading estetik */
+.gallery-container .gallery-item:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+.gallery-container .gallery-item:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.gallery-container .gallery-item:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 5;
+    box-shadow: 0 15px 30px rgba(255, 154, 162, 0.25);
+}
+
+/* ==========================================================================
+   7. PORTFOLIO / PROJECTS SECTION
+   ========================================================================== */
+.portfolio {
+    background: var(--second-bg-color);
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.portfolio-box {
+    background: var(--card-bg);
+    border-radius: 2.5rem;
+    padding: 3.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    transition: .4s ease;
+    border: 2px solid transparent;
+}
+
+.portfolio-box:hover {
+    border-color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+.portfolio-info h4 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-info p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.tech-stack {
+    font-size: 1.3rem;
+    background: var(--bg-color);
+    padding: 0.6rem 1.4rem;
+    border-radius: 2rem;
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   8. CONTACT SECTION
+   ========================================================================== */
+.contact-form {
+    max-width: 65rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-form .input-box input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.6rem;
+    font-size: 1.5rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 2rem;
+    margin: 1rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.contact-form .input-box input:focus,
+.contact-form textarea:focus {
+    border-color: var(--main-color);
+}
+
+.contact-form .input-box input {
+    width: 48%;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/* ==========================================================================
+   9. FOOTER SECTION
+   ========================================================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 9%;
+    background: var(--card-bg);
+    border-top: 2px dashed var(--main-color);
+}
+
+.footer-text p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Sosmed Kecil di Footer */
+.footer-socials {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.footer-socials a {
+    font-size: 2.5rem;   /* Ukuran sosmed footer disesuaikan */
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--main-color);
+    transform: scale(1.2);
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    transition: .3s;
+}
+
+.footer-iconTop a:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   10. RESPONSIVE MEDIA QUERIES (HP & Tablet)
+   ========================================================================== */
+@media (max-width: 991px) {
+    header, section, footer { padding-left: 5%; padding-right: 5%; }
+    html { font-size: 55%; }
+}
+
+@media (max-width: 768px) {
+    .hamburger { 
+        display: block; 
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 2rem 5%;
+        background: rgba(255, 245, 245, 0.98);
+        border-top: 2px dashed var(--main-color);
+        flex-direction: column;
+        transition: .4s ease;
+    }
+    .nav-links.active { 
+        left: 0; 
+    }
+    .nav-links li { 
+        margin: 2rem 0; 
+    }
+    .nav-links a { 
+        font-size: 2rem; 
+        margin-left: 0; 
+    }
+    
+    .home { 
+        flex-direction: column-reverse; 
+        text-align: center; 
+        padding-top: 15rem; 
+    }
+    .home-img img { 
+        width: 65vw; 
+        margin-bottom: 3rem; 
+    }
+    .social-media {
+        justify-content: center; /* Ikon medsos ke tengah saat di HP */
+    }
+    
+    .about { 
+        flex-direction: column-reverse; 
+        text-align: center; 
+    }
+    .about-img img { 
+        width: 60vw; 
+        margin-top: 3rem; 
+    }
+    
+    .contact-form .input-box input { 
+        width: 100%; 
+    }
+    
+    .footer-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
